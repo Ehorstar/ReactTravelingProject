@@ -36,3 +36,8 @@ header {
   justify-content: space-between;
   align-items: center;
 }
+
+.error{
+  color: red;
+  font-size: small;
+}
