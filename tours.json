@@ -12,7 +12,7 @@
     "hotel": "Hotel Lumiere",
     "rating": 4.6,
     "category": "Romantic",
-    "image": "https://picsum.photos/400/250?1",
+    "image": "https://images.pexels.com/photos/1446624/pexels-photo-1446624.jpeg",
     "description": "Романтичний тур у серце Франції з прогулянками біля Ейфелевої вежі."
   },
   {
@@ -28,7 +28,7 @@
     "hotel": "Roma Centro",
     "rating": 4.7,
     "category": "Historic",
-    "image": "https://picsum.photos/400/250?2",
+    "image": "https://www.pexels.com/uk-ua/photo/2064827/",
     "description": "Подорож до Колізею, Ватикану та стародавніх вулиць Риму."
   },
   {
@@ -44,7 +44,7 @@
     "hotel": "London Bridge Hotel",
     "rating": 4.3,
     "category": "City Tour",
-    "image": "https://picsum.photos/400/250?3",
+    "image": "https://images.pexels.com/photos/258117/pexels-photo-258117.jpeg",
     "description": "Екскурсії Лондоном, Букінгемський палац та річка Темза."
   },
   {
@@ -60,7 +60,7 @@
     "hotel": "Sunny Barcelona Resort",
     "rating": 4.8,
     "category": "Beach",
-    "image": "https://picsum.photos/400/250?4",
+    "image": "https://images.pexels.com/photos/1388030/pexels-photo-1388030.jpeg",
     "description": "Сонячний пляжний відпочинок і знайомство з творіннями Гауді."
   },
   {
@@ -76,7 +76,7 @@
     "hotel": "Istanbul Palace",
     "rating": 4.4,
     "category": "Cultural",
-    "image": "httpsum.photos/400/250?5",
+    "image": "https://images.pexels.com/photos/1549326/pexels-photo-1549326.jpeg",
     "description": "Східні ринки, мечеті, цікаві екскурсії по історичному центру."
   },
   {
@@ -92,7 +92,7 @@
     "hotel": "Vienna Imperial",
     "rating": 4.5,
     "category": "Classical",
-    "image": "https://picsum.photos/400/250?6",
+    "image": "https://images.pexels.com/photos/161074/vienna-st-charles-s-church-downtown-church-161074.jpeg",
     "description": "Класична Європа: концерти Моцарта та палаци Габсбургів."
   },
   {
@@ -108,7 +108,7 @@
     "hotel": "Prague Old Town Hotel",
     "rating": 4.2,
     "category": "City Tour",
-    "image": "https://picsum.photos/400/250?7",
+    "image": "https://images.pexels.com/photos/126292/pexels-photo-126292.jpeg",
     "description": "Прогулянки середньовічними вулицями і знаменитий Карлів міст."
   },
   {
@@ -124,7 +124,7 @@
     "hotel": "Berlin City House",
     "rating": 4.1,
     "category": "Urban",
-    "image": "https://picsum.photos/400/250?8",
+    "image": "https://images.pexels.com/photos/1963082/pexels-photo-1963082.jpeg",
     "description": "Сучасна архітектура, музеї та нічне життя Берліна."
   },
   {
@@ -140,7 +140,7 @@
     "hotel": "Canal View Hotel",
     "rating": 4.4,
     "category": "Relax",
-    "image": "https://picsum.photos/400/250?9",
+    "image": "https://images.pexels.com/photos/2031706/pexels-photo-2031706.jpeg",
     "description": "Канали, музеї та велосипедні екскурсії Амстердамом."
   },
   {
@@ -156,7 +156,7 @@
     "hotel": "Athenian Hills Resort",
     "rating": 4.6,
     "category": "Historic",
-    "image": "https://picsum.photos/400/250?10",
+    "image": "https://images.pexels.com/photos/772686/pexels-photo-772686.jpeg",
     "description": "Путівник по стародавній Греції: Акрополь, Плавані та гастротури."
   },
   {
@@ -172,7 +172,7 @@
     "hotel": "Budapest Thermal Hotel",
     "rating": 4.3,
     "category": "Relax",
-    "image": "https://picsum.photos/400/250?11",
+    "image": "https://images.pexels.com/photos/73796/budapest-hungary-parliament-building-73796.jpeg",
     "description": "Термальні купальні, Дунай та красива архітектура."
   },
   {
@@ -188,7 +188,7 @@
     "hotel": "Dubai Luxury Towers",
     "rating": 4.9,
     "category": "Premium",
-    "image": "https://picsum.photos/400/250?12",
+    "image": "https://images.pexels.com/photos/823696/pexels-photo-823696.jpeg",
     "description": "Преміум відпочинок у пустелі з хмарочосами та пляжами."
   },
   {
@@ -204,7 +204,7 @@
     "hotel": "Nordic Breeze Hotel",
     "rating": 4.2,
     "category": "Scandinavian",
-    "image": "https://picsum.photos/400/250?13",
+    "image": "https://images.pexels.com/photos/3117216/pexels-photo-3117216.jpeg",
     "description": "Скандинавські краєвиди, море та сучасна архітектура."
   },
   {
@@ -220,7 +220,7 @@
     "hotel": "Swiss Lake Resort",
     "rating": 4.8,
     "category": "Nature",
-    "image": "https://picsum.photos/400/250?14",
+    "image": "https://images.pexels.com/photos/34192225/pexels-photo-34192225.jpeg",
     "description": "Озера, гори та чисте швейцарське повітря."
   },
   {
@@ -236,7 +236,7 @@
     "hotel": "Pyramids View Hotel",
     "rating": 4.5,
     "category": "Adventure",
-    "image": "https://source.unsplash.com/400x250/?paris",
+    "image": "https://images.pexels.com/photos/3522880/pexels-photo-3522880.jpeg",
     "description": "Піраміди, сафарі та відпочинок на Червоному морі."
   }
 ]
