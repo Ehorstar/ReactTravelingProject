@@ -1,1 +1,24 @@
+[
+  {
+    "id": 1,
+    "from": "Kyiv",
+    "to": "Berlin",
+    "price": 120,
+    "airline": "WizzAir"
+  },
+  {
+    "id": 2,
+    "from": "Warsaw",
+    "to": "Paris",
+    "price": 95,
+    "airline": "LOT"
+  },
+  {
+    "id": 3,
+    "from": "Lviv",
+    "to": "London",
+    "price": 150,
+    "airline": "Ryanair"
+  }
+]
 
