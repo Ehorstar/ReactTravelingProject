@@ -12,6 +12,7 @@ import TripsHistory from "./pages/TripsHistory";
 import Settings from "./pages/Settings";
 import ThemeProvider from "./providers/ThemeProvider";
 import I18nProvider from "./providers/I18nProvider";
+import { getHotels, getTours } from "./loaders/TravelLoader";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,7 @@ const router = createBrowserRouter([
       {
         path: "booking",
         element: <Booking />,
+        loader: getTours,
       },
       {
         path: "listpage",
