@@ -1,53 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { RouterProvider, createBrowserRouter } from "react-router";
-import Home from "./pages/Home";
-import Registration from "./pages/Registration";
-import Booking from "./pages/Booking";
-import List from "./pages/List";
-import TripsHistory from "./pages/TripsHistory";
-import Settings from "./pages/Settings";
+import { RouterProvider } from "react-router";
 import ThemeProvider from "./providers/ThemeProvider";
 import I18nProvider from "./providers/I18nProvider";
-import { getHotels, getTours } from "./loaders/TravelLoader";
-
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <App />,
-
-    children: [
-      {
-        index: true,
-        element: <Home />,
-      },
-      {
-        path: "registration",
-        element: <Registration />,
-      },
-      {
-        path: "booking",
-        element: <Booking />,
-        loader: getTours,
-      },
-      {
-        path: "listpage",
-        element: <List />,
-      },
-      {
-        path: "tripshistory",
-        element: <TripsHistory />,
-      },
-      {
-        path: "settings",
-        element: <Settings />,
-      },
-    ],
-  },
-]);
+import router from "./Router";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

@@ -12,10 +12,10 @@ function App() {
     <div className={`app theme-${theme}`}>
       <header>
         <Header />
-        <div style={{ display: "flex", gap: "10px" }}>
+        {/* <div style={{ display: "flex", gap: "10px" }}>
           <ThemeButton />
           <LangButton />
-        </div>
+        </div> */}
       </header>
       <Outlet />
     </div>

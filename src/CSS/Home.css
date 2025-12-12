@@ -1,0 +1,67 @@
+.hero {
+  position: relative;
+  height: 100vh;
+  background-image: url("https://images.pexels.com/photos/994605/pexels-photo-994605.jpeg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.hero-content {
+  position: relative; 
+  text-align: center;
+  color: white;
+}
+
+
+.hero-card {
+  background-image: url("https://images.pexels.com/photos/167684/pexels-photo-167684.jpeg");
+  background-size: cover;
+  background-position: center;
+  padding: 40px 50px;
+  border-radius: 20px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.4);
+  max-width: 500px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.hero-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  border-radius: 20px;
+}
+
+.hero-card * {
+  position: relative;
+  z-index: 2;
+}
+
+.btn-home{
+  padding: 12px 25px;
+  border: 2px solid aquamarine;
+  background: transparent;
+  color: aquamarine;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-home:hover {
+  background: aquamarine;
+  color: white;
+}
+
+

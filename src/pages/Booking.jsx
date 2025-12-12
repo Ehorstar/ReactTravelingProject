@@ -4,7 +4,6 @@ import { useLoaderData } from "react-router-dom";
 import "../CSS/Booking.css";
 import {
   CalendarOutlined,
-  CarOutlined,
   EnvironmentFilled,
   HomeOutlined,
   MoonOutlined,
@@ -15,56 +14,60 @@ const Booking = () => {
   const { currentTexts } = useContext(I18nContext);
   const tours = useLoaderData();
   return (
-    <div className="container">
-      <h1 className="tour">Доступні білети</h1>
+    <div className="booking-hero">
+      <div className="container">
+        <h1 className="tour">Доступні білети</h1>
 
-      {tours.map((tour) => (
-        <div key={tour.id} className="tour">
-          <img className="tour-img" src={tour.image} alt={tour.to} />
+        {tours.map((tour) => (
+          <div key={tour.id} className="tour">
+            <img className="tour-img" src={tour.image} alt={tour.to} />
 
-          <div className="tour-title">
-            <div>
-              <span>
-                <EnvironmentFilled style={{ fontSize: 26, color: "red" }} />
-                <span style={{ fontSize: 23 }}>{tour.to}</span>
-              </span>
-              <div></div>
-              <span style={{ fontSize: 19 }}>{tour.rating}</span>
-              <StarFilled style={{ color: "gold", fontSize: 21 }} />{" "}
-              <span style={{ color: "gray", fontSize: 19 }}>
-                {tour.category}
-              </span>
-              <div style={{ fontSize: 24, fontFamily: "Poppins" }}>
-                {tour.description}
-              </div>
-            </div>
-
-            <div className="group">
-              <span className="info">
-                <CalendarOutlined
-                  style={{ fontSize: 23, color: "dodgerblue" }}
-                />
-                <span style={{ fontSize: 17 }}>
-                  <MoonOutlined /> {tour.days}
+            <div className="tour-title">
+              <div>
+                <span>
+                  <EnvironmentFilled style={{ fontSize: 26, color: "red" }} />
+                  <span style={{ fontSize: 23 }}>{tour.to}</span>
                 </span>
-              </span>
+                <div></div>
+                <span style={{ fontSize: 19 }}>{tour.rating}</span>
+                <StarFilled style={{ color: "gold", fontSize: 21 }} />{" "}
+                <span style={{ color: "gray", fontSize: 19 }}>
+                  {tour.category}
+                </span>
+                <div style={{ fontSize: 24, fontFamily: "Poppins" }}>
+                  {tour.description}
+                </div>
+              </div>
 
-              <span className="info">
-                <HomeOutlined style={{ fontSize: 23, color: "dodgerblue" }} />
-                <span style={{ fontSize: 17 }}>{tour.hotel}</span>
-              </span>
+              <div className="group">
+                <span className="info">
+                  <MoonOutlined style={{ fontSize: 23, color: "dodgerblue" }} />
+                  <span style={{ fontSize: 17 }}>{tour.days}</span>
+                </span>
 
-              <span className="info">
-                <CarOutlined style={{ fontSize: 23, color: "dodgerblue" }} />
-                <span style={{ fontSize: 17 }}>{tour.dateStart}</span>
-              </span>
-              <div className="tour-price">
-                ${tour.price}
+                <span className="info">
+                  <HomeOutlined style={{ fontSize: 23, color: "dodgerblue" }} />
+                  <span style={{ fontSize: 17 }}>{tour.hotel}</span>
+                </span>
+
+                <span className="info">
+                  <CalendarOutlined
+                    style={{ fontSize: 23, color: "dodgerblue" }}
+                  />
+                  <span style={{ fontSize: 17 }}>{tour.dateStart}</span>
+                </span>
+
+                <div className="buying">
+                  <span className="tour-price">${tour.price}</span>
+                  <span>
+                    <button className="buy-button">ORDER</button>
+                  </span>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 };
