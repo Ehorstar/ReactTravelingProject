@@ -1,15 +1,17 @@
 .booking-hero {
   background-image: url("https://images.pexels.com/photos/2325447/pexels-photo-2325447.jpeg");
-  background-size: cover; 
+  background-size: cover;
   background-position: center;
-  background-repeat: no-repeat; 
-  background-attachment: fixed; 
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  padding-bottom: 40px;
+  min-height: 100vh;
 }
-
-html, body {
-  height: 100%;
+.booking-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
 }
-
 .container {
   padding-top: 70px;
   max-width: 1000px;
@@ -19,7 +21,7 @@ html, body {
   display: flex;
   gap: 20px;
   padding: 20px;
-  border-radius: 12px;
+  border-radius: 10px;
   background: white;
   margin-bottom: 20px;
 }
@@ -102,4 +104,18 @@ html, body {
   color: forestgreen;
   font-family: "Courier New", Courier, monospace;
   font-size: 23px;
+}
+
+.search-input {
+  width: 200px;
+  height: 25px;
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: large;
+  margin-left: auto;
+}
+
+.search-input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
 }

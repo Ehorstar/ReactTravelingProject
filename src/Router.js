@@ -7,6 +7,7 @@ import { getTours } from "./loaders/TravelLoader";
 import List from "./pages/List";
 import TripsHistory from "./pages/TripsHistory";
 import Settings from "./pages/Settings";
+import { getSearchTours } from "./loaders/SearchLoader";
 
 const router = createBrowserRouter([
   {
@@ -25,7 +26,6 @@ const router = createBrowserRouter([
       {
         path: "booking",
         element: <List />,
-        
       },
       {
         path: "listpage",
@@ -39,6 +39,11 @@ const router = createBrowserRouter([
       {
         path: "settings",
         element: <Settings />,
+      },
+      {
+        path: "search",
+        loader: getSearchTours,
+        element: <Booking />,
       },
     ],
   },

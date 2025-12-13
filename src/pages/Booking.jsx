@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import I18nContext from "../contexts/I18nContext";
 import { useLoaderData } from "react-router-dom";
-import "../CSS/Booking.css";
+
 import {
   CalendarOutlined,
   EnvironmentFilled,
@@ -9,6 +9,7 @@ import {
   MoonOutlined,
   StarFilled,
 } from "@ant-design/icons";
+import Search from "../components/Search";
 
 const Booking = () => {
   const { currentTexts } = useContext(I18nContext);
@@ -16,7 +17,10 @@ const Booking = () => {
   return (
     <div className="booking-hero">
       <div className="container">
-        <h1 className="tour">Доступні білети</h1>
+        <div className="booking-header">
+          <h1>Доступні білети</h1>
+          <Search />
+        </div>
 
         {tours.map((tour) => (
           <div key={tour.id} className="tour">
