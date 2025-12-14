@@ -4,10 +4,11 @@ import Home from "./pages/Home";
 import Registration from "./pages/Registration";
 import Booking from "./pages/Booking";
 import { getTours } from "./loaders/TravelLoader";
-import List from "./pages/List";
 import TripsHistory from "./pages/TripsHistory";
 import Settings from "./pages/Settings";
 import { getSearchTours } from "./loaders/SearchLoader";
+import Tours from "./pages/Tours";
+import Tour from "./pages/Tour";
 
 const router = createBrowserRouter([
   {
@@ -25,12 +26,12 @@ const router = createBrowserRouter([
       },
       {
         path: "booking",
-        element: <List />,
+        element: <Booking />,
       },
       {
         path: "listpage",
         loader: getTours,
-        element: <Booking />,
+        element: <Tours />,
       },
       {
         path: "tripshistory",
@@ -44,6 +45,11 @@ const router = createBrowserRouter([
         path: "search",
         loader: getSearchTours,
         element: <Booking />,
+      },
+      {
+        path: "tour",
+        loader: getTours,
+        element: <Tour />,
       },
     ],
   },

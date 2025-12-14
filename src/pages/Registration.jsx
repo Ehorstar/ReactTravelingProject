@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import * as Yup from "yup";
 import I18nContext from "../contexts/I18nContext";
+import "../CSS/Registration.css";
 
 const initialValues = {
   fullname: "",
@@ -39,7 +40,7 @@ const Registration = () => {
   };
 
   return (
-    <div>
+    <div className="container">
       <h1>{currentTexts.titleRegistration}</h1>
       <Formik
         initialValues={initialValues}
@@ -77,7 +78,9 @@ const Registration = () => {
               />
             </div>
 
-            <button type="submit">{currentTexts.button}</button>
+            <button className="button" type="submit">
+              {currentTexts.button}
+            </button>
           </Form>
         )}
       </Formik>

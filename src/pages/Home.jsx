@@ -12,7 +12,7 @@ const Home = () => {
         <div className="hero-card">
           <h1>{currentTexts.titleHome}</h1>
           <p>{currentTexts.aboutHome}</p>
-          <button className="btn-home" onClick={() => navigate("/listpage")}>
+          <button className="button" onClick={() => navigate("/listpage")}>
             {currentTexts.booknowHome}
           </button>
         </div>

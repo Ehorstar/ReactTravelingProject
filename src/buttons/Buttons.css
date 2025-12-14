@@ -1,5 +1,15 @@
-.btn-icon{
-    border: none;
-    background-color: transparent;
-    color:cadetblue;
+.button {
+  padding: 12px 25px;
+  border: 2px solid aquamarine;
+  background: transparent;
+  color: aquamarine;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.button:hover {
+  background: aquamarine;
+  color: white;
 }

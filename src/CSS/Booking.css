@@ -77,25 +77,6 @@
   gap: 6px;
 }
 
-.buy-button {
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: 0.2s;
-}
-
-.buy-button:hover {
-  background-color: #0069d9;
-}
-
-.buy-button:active {
-  background-color: #005cbf;
-}
-
 .tour-price {
   display: flex;
   flex-direction: column;

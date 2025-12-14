@@ -10,7 +10,7 @@ const LangButton = () => {
   };
 
   return (
-    <button onClick={toggleLang} className="btn-icon">
+    <button onClick={toggleLang} className="button">
       <GlobalOutlined /> {currentLang.toUpperCase()}
     </button>
   );
