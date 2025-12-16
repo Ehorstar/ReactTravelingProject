@@ -3,6 +3,7 @@ import { ErrorMessage, Field, Form, Formik } from "formik";
 import * as Yup from "yup";
 import I18nContext from "../contexts/I18nContext";
 import "../CSS/Registration.css";
+import RegistrationContext from "../contexts/RegistrationContext";
 
 const initialValues = {
   fullname: "",
@@ -33,8 +34,23 @@ const validationSchema = Yup.object().shape({
 });
 const Registration = () => {
   const { currentTexts } = useContext(I18nContext);
+  const { registred, setRegistred } = useContext(RegistrationContext);
+
+  console.log(registred);
+
+  const leave = () => {
+    if (registred === "true") {
+      setRegistred("false");
+    }
+  };
 
   const submitHandler = (values, { resetForm }) => {
+    if (registred === "true") {
+      console.log("Already registred");
+    } else {
+      setRegistred("true");
+    }
+
     console.log(values);
     resetForm();
   };
@@ -84,6 +100,9 @@ const Registration = () => {
           </Form>
         )}
       </Formik>
+      <button style={{ backgroundColor: "red" }} onClick={() => leave()}>
+        Leave
+      </button>
     </div>
   );
 };

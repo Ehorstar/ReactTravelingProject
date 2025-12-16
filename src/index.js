@@ -6,14 +6,17 @@ import { RouterProvider } from "react-router";
 import ThemeProvider from "./providers/ThemeProvider";
 import I18nProvider from "./providers/I18nProvider";
 import router from "./Router";
+import RegistrationProvider from "./providers/RegistrationProvider";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <I18nProvider>
-    <ThemeProvider>
-      <RouterProvider router={router} />
-    </ThemeProvider>
-  </I18nProvider>
+  <RegistrationProvider>
+    <I18nProvider>
+      <ThemeProvider>
+        <RouterProvider router={router} />
+      </ThemeProvider>
+    </I18nProvider>
+  </RegistrationProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function

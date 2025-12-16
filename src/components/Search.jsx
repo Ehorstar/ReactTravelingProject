@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import "../CSS/Booking.css";
+import "../CSS/Tours.css";
 const Search = () => {
   const [text, setText] = useState("");
   const navigate = useNavigate();
@@ -14,7 +14,7 @@ const Search = () => {
       navigate("/listpage");
       return;
     }
-    
+
     navigate(value ? `/search?q=${value}` : "/listpage");
     setText("");
   };

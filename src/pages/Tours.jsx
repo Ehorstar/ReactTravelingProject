@@ -15,7 +15,7 @@ const Tours = () => {
   const { currentTexts } = useContext(I18nContext);
   const tours = useLoaderData();
   const navigate = useNavigate();
-
+  
   return (
     <div className="booking-hero">
       <div className="container">
@@ -44,7 +44,6 @@ const Tours = () => {
                   {tour.description}
                 </div>
               </div>
-
               <div className="group">
                 <span className="info">
                   <MoonOutlined style={{ fontSize: 23, color: "dodgerblue" }} />
@@ -66,7 +65,10 @@ const Tours = () => {
                 <div className="buying">
                   <span className="tour-price">${tour.price}</span>
                   <span>
-                    <button onClick={() => navigate("/tour")} className="button">
+                    <button
+                      onClick={() => navigate(`/tour/${tour.to}`)}
+                      className="button"
+                    >
                       ORDER
                     </button>
                   </span>

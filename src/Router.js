@@ -47,7 +47,7 @@ const router = createBrowserRouter([
         element: <Booking />,
       },
       {
-        path: "tour",
+        path: "tour/:to",
         loader: getTours,
         element: <Tour />,
       },
