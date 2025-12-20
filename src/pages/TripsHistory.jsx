@@ -2,7 +2,7 @@ import React from 'react';
 
 const TripsHistory = () => {
     return (
-      <div>
+      <div className='container'>
         <h1>Trips History</h1>
       </div>
     );

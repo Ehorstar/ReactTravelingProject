@@ -15,7 +15,7 @@ const translations = {
   ua: {
     titleHome: "Домашня сторінка",
     titleBooking: "Сторінка бронювання",
-    titleRegistration: "Сторінка реєстрації",
+    titleRegistration: "Реєстрація",
     name: "Повне ім'я",
     age: "Вік",
     password: "Уведіть пароль",

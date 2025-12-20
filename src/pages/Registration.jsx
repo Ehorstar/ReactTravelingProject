@@ -39,16 +39,16 @@ const Registration = () => {
   console.log(registred);
 
   const leave = () => {
-    if (registred === "true") {
-      setRegistred("false");
+    if (registred) {
+      setRegistred(false);
     }
   };
 
   const submitHandler = (values, { resetForm }) => {
-    if (registred === "true") {
+    if (registred) {
       console.log("Already registred");
     } else {
-      setRegistred("true");
+      setRegistred(true);
     }
 
     console.log(values);
@@ -56,53 +56,72 @@ const Registration = () => {
   };
 
   return (
-    <div className="container">
-      <h1>{currentTexts.titleRegistration}</h1>
-      <Formik
-        initialValues={initialValues}
-        onSubmit={submitHandler}
-        validationSchema={validationSchema}
-      >
-        {() => (
-          <Form>
-            <div>
-              <Field name="fullname" placeholder={currentTexts.name} />
-              <ErrorMessage name="fullname" component="div" className="error" />
-            </div>
-            <div>
-              <Field name="age" type="number" placeholder={currentTexts.age} />
-              <ErrorMessage name="age" component="div" className="error" />
-            </div>
-            <div>
-              <Field
-                type="password"
-                name="password"
-                placeholder={currentTexts.password}
-              />
-              <ErrorMessage name="password" component="div" className="error" />
-            </div>
-            <div>
-              <Field
-                type="password"
-                name="repeatpassword"
-                placeholder={currentTexts.repeatpassword}
-              />
-              <ErrorMessage
-                name="repeatpassword"
-                component="div"
-                className="error"
-              />
-            </div>
-
-            <button className="button" type="submit">
-              {currentTexts.button}
-            </button>
-          </Form>
-        )}
-      </Formik>
-      <button style={{ backgroundColor: "red" }} onClick={() => leave()}>
-        Leave
-      </button>
+    <div className="registration-hero">
+      <div className="container">
+        <Formik
+          initialValues={initialValues}
+          onSubmit={submitHandler}
+          validationSchema={validationSchema}
+        >
+          {() => (
+            <Form className="registration-form">
+              <h1>{currentTexts.titleRegistration}</h1>
+              <div>
+                <Field name="fullname" placeholder={currentTexts.name} />
+                <ErrorMessage
+                  name="fullname"
+                  component="div"
+                  className="error"
+                />
+              </div>
+              <div>
+                <Field
+                  name="age"
+                  type="number"
+                  placeholder={currentTexts.age}
+                />
+                <ErrorMessage name="age" component="div" className="error" />
+              </div>
+              <div>
+                <Field
+                  type="password"
+                  name="password"
+                  placeholder={currentTexts.password}
+                />
+                <ErrorMessage
+                  name="password"
+                  component="div"
+                  className="error"
+                />
+              </div>
+              <div>
+                <Field
+                  type="password"
+                  name="repeatpassword"
+                  placeholder={currentTexts.repeatpassword}
+                />
+                <ErrorMessage
+                  name="repeatpassword"
+                  component="div"
+                  className="error"
+                />
+              </div>
+              
+              <div className="buttons">
+                <button className="button" type="submit">
+                  {currentTexts.button}
+                </button>
+                <button
+                  style={{ backgroundColor: "red" }}
+                  onClick={() => leave()}
+                >
+                  Leave
+                </button>
+              </div>
+            </Form>
+          )}
+        </Formik>
+      </div>
     </div>
   );
 };

@@ -17,6 +17,7 @@
   max-width: 1000px;
   margin: 0 auto;
 }
+
 .tour {
   display: flex;
   gap: 20px;

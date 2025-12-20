@@ -1,4 +1,4 @@
 import { createContext } from "react";
 
-const RegistrationContext = createContext();
+const RegistrationContext = createContext(false);
 export default RegistrationContext;

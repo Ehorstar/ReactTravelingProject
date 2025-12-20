@@ -1,3 +1,27 @@
 .container{
     padding-top: 70px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.registration-hero {
+  background-image: url("https://images.pexels.com/photos/167698/pexels-photo-167698.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  padding-bottom: 40px;
+  min-height: 100vh;
+}
+
+.registration-form {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 500px;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    gap: 10px;
 }

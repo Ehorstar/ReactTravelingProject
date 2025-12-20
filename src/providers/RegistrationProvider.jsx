@@ -3,7 +3,8 @@ import RegistrationContext from "../contexts/RegistrationContext";
 
 const RegistrationProvider = ({ children }) => {
   const [registred, setRegistred] = useState(() => {
-    return localStorage.getItem("registred") || "false";
+    const saved = localStorage.getItem("registred");
+    return saved ? JSON.parse(saved) : false;
   });
 
   useEffect(() => {

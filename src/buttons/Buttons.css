@@ -1,8 +1,8 @@
 .button {
-  padding: 12px 25px;
-  border: 2px solid aquamarine;
+  padding: 10px 25px;
+  border: 2px solid dodgerblue;
   background: transparent;
-  color: aquamarine;
+  color: dodgerblue;
   border-radius: 8px;
   font-size: 16px;
   cursor: pointer;
@@ -10,6 +10,6 @@
 }
 
 .button:hover {
-  background: aquamarine;
+  background: dodgerblue;
   color: white;
 }

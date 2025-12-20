@@ -13,9 +13,9 @@ const Header = () => {
         <span>Registration/Login</span>
       </NavLink>
 
-      <NavLink to="booking">
+      {/* <NavLink to="booking">
         <span>Booking</span>
-      </NavLink>
+      </NavLink> */}
 
       <NavLink to="listpage">
         <span>Trips list page</span>
@@ -27,6 +27,10 @@ const Header = () => {
 
       <NavLink to="settings">
         <span>Settings</span>
+      </NavLink>
+
+      <NavLink to="test">
+        <span>Test</span>
       </NavLink>
     </nav>
   );

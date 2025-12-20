@@ -6,21 +6,21 @@ import RegistrationContext from "../contexts/RegistrationContext";
 
 const Tour = (props) => {
   const tours = useLoaderData();
-  const { to } = useParams();
   const { registred } = useContext(RegistrationContext);
+  const { to } = useParams();
   const tour = tours.find((t) => t.to === to);
   const navigate = useNavigate();
 
   const checkFunction = () => {
-    if (registred === "true") {
-      navigate("/booking");
-    } else {
+    if (registred) {
+      navigate(`/booking/${tour.countryTo}`);
+    } else{
       navigate("/registration");
     }
   };
   
   return (
-    <div key={tour.id} className="container">
+    <div className="container">
       <div>
         <span style={{ fontSize: 28, color: "dodgerblue" }}>
           {tour.hotel},{" "}
