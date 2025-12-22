@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import "../CSS/Tours.css";
+
 const Search = () => {
   const [text, setText] = useState("");
   const navigate = useNavigate();
@@ -20,14 +21,16 @@ const Search = () => {
   };
 
   return (
-    <input
-      className="search-input"
-      type="text"
-      placeholder="Paris..."
-      value={text}
-      onChange={(e) => setText(e.target.value)}
-      onKeyDown={keyDownHandler}
-    />
+    <div className="search">
+      <input
+        className="search-input"
+        type="text"
+        placeholder="🔍Paris..."
+        value={text}
+        onChange={(e) => setText(e.target.value)}
+        onKeyDown={keyDownHandler}
+      />
+    </div>
   );
 };
 

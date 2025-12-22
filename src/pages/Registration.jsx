@@ -58,6 +58,7 @@ const Registration = () => {
   return (
     <div className="registration-hero">
       <div className="container">
+        <h1>{currentTexts.titleRegistration}</h1>
         <Formik
           initialValues={initialValues}
           onSubmit={submitHandler}
@@ -65,7 +66,6 @@ const Registration = () => {
         >
           {() => (
             <Form className="registration-form">
-              <h1>{currentTexts.titleRegistration}</h1>
               <div>
                 <Field name="fullname" placeholder={currentTexts.name} />
                 <ErrorMessage
@@ -106,16 +106,10 @@ const Registration = () => {
                   className="error"
                 />
               </div>
-              
+
               <div className="buttons">
                 <button className="button" type="submit">
                   {currentTexts.button}
-                </button>
-                <button
-                  style={{ backgroundColor: "red" }}
-                  onClick={() => leave()}
-                >
-                  Leave
                 </button>
               </div>
             </Form>

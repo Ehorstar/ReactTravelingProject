@@ -2,7 +2,7 @@ const translations = {
   en: {
     titleHome: "Home page",
     titleBooking: "Booking page",
-    titleRegistration: "Registratiton page",
+    titleRegistration: "Registration page",
     name: "Full name",
     age: "Age",
     password: "Enter password",

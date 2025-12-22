@@ -1,37 +1,30 @@
-import React from "react";
 import { NavLink } from "react-router";
-import {  } from "@ant-design/icons";
+import logo from "../assets/logo.png";
 
 const Header = () => {
   return (
-    <nav style={{ display: "flex", gap: "10px" }}>
-      <NavLink to="/">
-        <span>Home</span>
+    <nav className="nav">
+      <NavLink to="/" className="nav-left">
+        <img src={logo} alt="Logo" className="logo" />
       </NavLink>
 
-      <NavLink to="registration">
-        <span>Registration/Login</span>
-      </NavLink>
+      <div className="nav-center">
+        <NavLink to="listpage" className="nav-link">
+          Tours
+        </NavLink>
+        <NavLink to="tripshistory" className="nav-link">
+          History
+        </NavLink>
+        <NavLink to="settings" className="nav-link">
+          Settings
+        </NavLink>
+      </div>
 
-      {/* <NavLink to="booking">
-        <span>Booking</span>
-      </NavLink> */}
-
-      <NavLink to="listpage">
-        <span>Trips list page</span>
-      </NavLink>
-
-      <NavLink to="tripshistory">
-        <span>Trips history</span>
-      </NavLink>
-
-      <NavLink to="settings">
-        <span>Settings</span>
-      </NavLink>
-
-      <NavLink to="test">
-        <span>Test</span>
-      </NavLink>
+      <div className="nav-right">
+        <NavLink to="registration" className="nav-link">
+          <button className="button">Registration</button>
+        </NavLink>
+      </div>
     </nav>
   );
 };

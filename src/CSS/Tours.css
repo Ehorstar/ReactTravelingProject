@@ -12,6 +12,7 @@
   align-items: center;
   margin-bottom: 20px;
 }
+
 .container {
   padding-top: 70px;
   max-width: 1000px;
@@ -24,7 +25,7 @@
   padding: 20px;
   border-radius: 10px;
   background: white;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .info {
@@ -79,13 +80,14 @@
 }
 
 .tour-price {
-  display: flex;
-  flex-direction: column;
-  margin-left: auto;
-  margin-top: auto;
-  color: forestgreen;
-  font-family: "Courier New", Courier, monospace;
-  font-size: 23px;
+  font-size: 24px;
+  font-weight: bold;
+  margin-right: 10px;
+  color: rgba(19, 219, 46, 0.695);
+}
+
+.search {
+  margin-left: 20px;
 }
 
 .search-input {
@@ -94,7 +96,6 @@
   border-radius: 8px;
   padding: 6px 10px;
   font-size: large;
-  margin-left: auto;
 }
 
 .search-input:focus {

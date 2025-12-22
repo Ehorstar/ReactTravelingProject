@@ -14,18 +14,18 @@ const Tour = (props) => {
   const checkFunction = () => {
     if (registred) {
       navigate(`/booking/${tour.countryTo}`);
-    } else{
+    } else {
       navigate("/registration");
     }
   };
-  
+
   return (
     <div className="container">
       <div>
-        <span style={{ fontSize: 28, color: "dodgerblue" }}>
+        <span style={{ fontSize: 28, color: "white" }}>
           {tour.hotel},{" "}
         </span>
-        <span style={{ fontSize: 28, color: "dodgerblue" }}>{tour.rating}</span>
+        <span style={{ fontSize: 28, color: "white" }}>{tour.rating}</span>
         <StarFilled style={{ color: "gold", fontSize: 28 }} />{" "}
       </div>
 
@@ -54,8 +54,10 @@ const Tour = (props) => {
           <span>
             Виїзд та повернення: {tour.dateStart} - {tour.dateEnd}
           </span>
+          <span className="price">
+            Ціна за людину: <span className="tour-price"> ${tour.price}</span>
+          </span>
 
-          <span className="tour-price">${tour.price}</span>
           <span>
             <button onClick={() => checkFunction()} className="button">
               ORDER
