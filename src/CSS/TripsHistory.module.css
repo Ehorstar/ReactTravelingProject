@@ -1,8 +1,30 @@
-.container{
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    margin-top: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.content {
+  padding-top: 100px; 
+}
 
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: var(--bg-card);
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tours{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: var(--bg-card);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.hero {
+  min-height: 100vh;
+  background-image: url("https://images.pexels.com/photos/7706294/pexels-photo-7706294.jpeg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
 }

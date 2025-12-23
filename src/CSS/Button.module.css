@@ -14,3 +14,18 @@
   color: white;
 }
 
+.buttonDelete {
+  padding: 5px 15px;
+  border: 2px solid red;
+  background: transparent;
+  color: red;
+  border-radius: 8px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.buttonDelete:hover {
+  background: red;
+  color: white;
+}

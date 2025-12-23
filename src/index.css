@@ -37,6 +37,7 @@ body {
   background: var(--bg-page);
   color: var(--text-main);
   transition: background-color 0.2s ease, color 0.2s ease;
+  
 }
 
 header {

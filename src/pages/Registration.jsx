@@ -58,64 +58,70 @@ const Registration = () => {
 
   return (
     <div className={styles["registration-hero"]}>
-      <div className={styles.container}>
-        <h1>{currentTexts.titleRegistration}</h1>
-        <Formik
-          initialValues={initialValues}
-          onSubmit={submitHandler}
-          validationSchema={validationSchema}
-        >
-          {() => (
-            <Form className={styles["registration-form"]}>
-              <div>
-                <Field name="fullname" placeholder={currentTexts.name} />
-                <ErrorMessage
-                  name="fullname"
-                  component="div"
-                  className={styles.error}
-                />
-              </div>
-              <div>
-                <Field
-                  name="age"
-                  type="number"
-                  placeholder={currentTexts.age}
-                />
-                <ErrorMessage name="age" component="div" className={styles.error} />
-              </div>
-              <div>
-                <Field
-                  type="password"
-                  name="password"
-                  placeholder={currentTexts.password}
-                />
-                <ErrorMessage
-                  name="password"
-                  component="div"
-                  className={styles.error}
-                />
-              </div>
-              <div>
-                <Field
-                  type="password"
-                  name="repeatpassword"
-                  placeholder={currentTexts.repeatpassword}
-                />
-                <ErrorMessage
-                  name="repeatpassword"
-                  component="div"
-                  className={styles.error}
-                />
-              </div>
+      <div className={styles.content}>
+        <div className={styles.container}>
+          <h1>{currentTexts.titleRegistration}</h1>
+          <Formik
+            initialValues={initialValues}
+            onSubmit={submitHandler}
+            validationSchema={validationSchema}
+          >
+            {() => (
+              <Form className={styles["registration-form"]}>
+                <div>
+                  <Field name="fullname" placeholder={currentTexts.name} />
+                  <ErrorMessage
+                    name="fullname"
+                    component="div"
+                    className={styles.error}
+                  />
+                </div>
+                <div>
+                  <Field
+                    name="age"
+                    type="number"
+                    placeholder={currentTexts.age}
+                  />
+                  <ErrorMessage
+                    name="age"
+                    component="div"
+                    className={styles.error}
+                  />
+                </div>
+                <div>
+                  <Field
+                    type="password"
+                    name="password"
+                    placeholder={currentTexts.password}
+                  />
+                  <ErrorMessage
+                    name="password"
+                    component="div"
+                    className={styles.error}
+                  />
+                </div>
+                <div>
+                  <Field
+                    type="password"
+                    name="repeatpassword"
+                    placeholder={currentTexts.repeatpassword}
+                  />
+                  <ErrorMessage
+                    name="repeatpassword"
+                    component="div"
+                    className={styles.error}
+                  />
+                </div>
 
-              <div className={styles["buttons"]}>
-                <button className={button.button} type="submit">
-                  {currentTexts.button}
-                </button>
-              </div>
-            </Form>
-          )}
-        </Formik>
+                <div className={styles["buttons"]}>
+                  <button className={button.button} type="submit">
+                    {currentTexts.button}
+                  </button>
+                </div>
+              </Form>
+            )}
+          </Formik>
+        </div>
       </div>
     </div>
   );

@@ -20,7 +20,7 @@ const Tours = () => {
   const navigate = useNavigate();
 
   return (
-    <div className={styles["booking-hero"]}>
+    <div className={`${styles["booking-hero"]} ${styles.page}`}>
       <div className={styles.container}>
 
         <div className={styles["tour-header"]}>

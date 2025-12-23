@@ -1,3 +1,7 @@
+.page {
+  padding-top: 50px;
+}
+
 .booking-hero {
   min-height: 100vh;
   background-image: url("https://images.pexels.com/photos/1914982/pexels-photo-1914982.jpeg");
@@ -16,9 +20,8 @@
 .tour-header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   margin-bottom: 20px;
-
+  color: var(--text-main);
   background: var(--bg-card);
   padding: 10px 20px;
   border-radius: 10px;
@@ -44,6 +47,7 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+  color: var(--text-main);
 }
 
 .group {
@@ -84,7 +88,7 @@
   border-radius: 8px;
   padding: 6px 10px;
   font-size: 16px;
-  border: none;
+  border-color: var(--text-main);
   outline: none;
 }
 
@@ -94,5 +98,5 @@
 
 .icon {
   font-size: 22px;
-  color: var(--accent);
+  color: var(--text-main);
 }
