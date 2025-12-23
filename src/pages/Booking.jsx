@@ -1,9 +1,11 @@
 import { ErrorMessage, Field, FieldArray, Formik, Form } from "formik";
-import React from "react";
-import { useLoaderData, useParams } from "react-router-dom";
+import React, { useContext } from "react";
+import { useLoaderData, useNavigate, useParams } from "react-router-dom";
 import * as Yup from "yup";
-import "../CSS/Booking.css";
+import styles from "../CSS/Booking.module.css";
 import { EnvironmentFilled } from "@ant-design/icons";
+import TripsContext from "../contexts/TripsContext";
+import button from "../CSS/Button.module.css";
 
 const initialValues = {
   amount: 1,
@@ -28,21 +30,23 @@ const validationSchema = Yup.object({
 });
 
 const Booking = () => {
+  const { addToTrips } = useContext(TripsContext);
   const tours = useLoaderData();
   const { countryTo } = useParams();
-
+  const navigate = useNavigate();
   const tour = tours.find((t) => t.countryTo === countryTo);
 
   const submitHandler = (values, { resetForm }) => {
     console.log(values);
+    addToTrips({ ...tour, ...values });
+    navigate("/tripshistory");
     resetForm();
   };
 
   return (
-    <div className="container">
+    <div className={styles.container}>
       <h1>
-        Booking {" "}
-        <EnvironmentFilled style={{ fontSize: 26, color: "red" }} />
+        Booking <EnvironmentFilled style={{ fontSize: 26, color: "red" }} />
         {tour.countryTo}
       </h1>
       <Formik
@@ -66,17 +70,17 @@ const Booking = () => {
 
           return (
             <Form>
-              <div className="dates">
+              <div className={styles.dates}>
                 <span>
                   {tour.dateStart}-{tour.dateEnd}
                 </span>
               </div>
 
-              <div className="price">
+              <div className={styles.price}>
                 <span>Price for 1 person: {tour.price}</span>
               </div>
               <div>
-                <div className="people-amount">
+                <div className={styles["people-amount"]}>
                   <label>Кількість осіб</label>
 
                   <Field
@@ -93,12 +97,12 @@ const Booking = () => {
 
                 <FieldArray name="passengers">
                   {() => (
-                    <div className="form-passengers">
+                    <div className={styles["form-passengers"]}>
                       <h3>Дані пасажирів:</h3>
 
                       {values.passengers.map((_, index) => (
-                        <div key={index} className="passenger-row">
-                          <div className="field">
+                        <div key={index} className={styles["passenger-row"]}>
+                          <div className={styles.field}>
                             <Field
                               name={`passengers.${index}.name`}
                               placeholder={`Ім'я ${index + 1} пасажира `}
@@ -106,11 +110,11 @@ const Booking = () => {
                             <ErrorMessage
                               name={`passengers.${index}.name`}
                               component="div"
-                              className="error"
+                              className={styles.error}
                             />
                           </div>
 
-                          <div className="field">
+                          <div className={styles.field}>
                             <Field
                               name={`passengers.${index}.age`}
                               placeholder="Вік"
@@ -119,7 +123,7 @@ const Booking = () => {
                             <ErrorMessage
                               name={`passengers.${index}.age`}
                               component="div"
-                              className="error"
+                              className={styles.error}
                             />
                           </div>
                         </div>
@@ -129,11 +133,11 @@ const Booking = () => {
                 </FieldArray>
               </div>
 
-              <div className="total-price">
+              <div className={styles["total-price"]}>
                 <span>Total price: ${tour.price * values.amount}</span>
               </div>
 
-              <button className="button" type="submit">
+              <button className={button.button} type="submit">
                 Book
               </button>
             </Form>

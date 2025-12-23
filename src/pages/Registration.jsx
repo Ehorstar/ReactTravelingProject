@@ -2,8 +2,9 @@ import React, { useContext } from "react";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import * as Yup from "yup";
 import I18nContext from "../contexts/I18nContext";
-import "../CSS/Registration.css";
+import styles from "../CSS/Registration.module.css";
 import RegistrationContext from "../contexts/RegistrationContext";
+import button from "../CSS/Button.module.css";
 
 const initialValues = {
   fullname: "",
@@ -56,8 +57,8 @@ const Registration = () => {
   };
 
   return (
-    <div className="registration-hero">
-      <div className="container">
+    <div className={styles["registration-hero"]}>
+      <div className={styles.container}>
         <h1>{currentTexts.titleRegistration}</h1>
         <Formik
           initialValues={initialValues}
@@ -65,13 +66,13 @@ const Registration = () => {
           validationSchema={validationSchema}
         >
           {() => (
-            <Form className="registration-form">
+            <Form className={styles["registration-form"]}>
               <div>
                 <Field name="fullname" placeholder={currentTexts.name} />
                 <ErrorMessage
                   name="fullname"
                   component="div"
-                  className="error"
+                  className={styles.error}
                 />
               </div>
               <div>
@@ -80,7 +81,7 @@ const Registration = () => {
                   type="number"
                   placeholder={currentTexts.age}
                 />
-                <ErrorMessage name="age" component="div" className="error" />
+                <ErrorMessage name="age" component="div" className={styles.error} />
               </div>
               <div>
                 <Field
@@ -91,7 +92,7 @@ const Registration = () => {
                 <ErrorMessage
                   name="password"
                   component="div"
-                  className="error"
+                  className={styles.error}
                 />
               </div>
               <div>
@@ -103,12 +104,12 @@ const Registration = () => {
                 <ErrorMessage
                   name="repeatpassword"
                   component="div"
-                  className="error"
+                  className={styles.error}
                 />
               </div>
 
-              <div className="buttons">
-                <button className="button" type="submit">
+              <div className={styles["buttons"]}>
+                <button className={button.button} type="submit">
                   {currentTexts.button}
                 </button>
               </div>

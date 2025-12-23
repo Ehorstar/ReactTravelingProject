@@ -1,0 +1,98 @@
+.booking-hero {
+  min-height: 100vh;
+  background-image: url("https://images.pexels.com/photos/1914982/pexels-photo-1914982.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding-bottom: 40px;
+}
+
+.container {
+  padding-top: 70px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.tour-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+
+  background: var(--bg-card);
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+
+.tour {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  background: var(--bg-card);
+  margin-bottom: 30px;
+}
+
+.tour-img {
+  height: 200px;
+  width: 300px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.tour-title {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.group {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: auto;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--bg-muted);
+  padding: 4px 10px;
+  border-radius: 20px;
+  width: fit-content;
+}
+
+.buying {
+  display: flex;
+  gap: 6px;
+}
+
+.tour-price {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--success);
+}
+
+.search {
+  margin-left: 20px;
+}
+
+.search-input {
+  width: 200px;
+  height: 30px;
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: 16px;
+  border: none;
+  outline: none;
+}
+
+.search-input:focus {
+  box-shadow: 0 0 0 2px var(--accent);
+}
+
+.icon {
+  font-size: 22px;
+  color: var(--accent);
+}

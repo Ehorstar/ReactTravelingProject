@@ -1,31 +1,35 @@
 import { NavLink } from "react-router";
 import logo from "../assets/logo.png";
+import styles from "../CSS/Home.module.css";
+import button from "../CSS/Button.module.css";
 
 const Header = () => {
   return (
-    <nav className="nav">
-      <NavLink to="/" className="nav-left">
-        <img src={logo} alt="Logo" className="logo" />
-      </NavLink>
+    <header>
+      <nav className={styles.nav}>
+        <NavLink to="/" className={styles["nav-left"]}>
+          <img src={logo} alt="Logo" className={styles.logo} />
+        </NavLink>
 
-      <div className="nav-center">
-        <NavLink to="listpage" className="nav-link">
-          Tours
-        </NavLink>
-        <NavLink to="tripshistory" className="nav-link">
-          History
-        </NavLink>
-        <NavLink to="settings" className="nav-link">
-          Settings
-        </NavLink>
-      </div>
+        <div className={styles["nav-center"]}>
+          <NavLink to="listpage" className={styles["nav-link"]}>
+            Tours
+          </NavLink>
+          <NavLink to="tripshistory" className={styles["nav-link"]}>
+            History
+          </NavLink>
+          <NavLink to="settings" className={styles["nav-link"]}>
+            Settings
+          </NavLink>
+        </div>
 
-      <div className="nav-right">
-        <NavLink to="registration" className="nav-link">
-          <button className="button">Registration</button>
-        </NavLink>
-      </div>
-    </nav>
+        <div className={styles["nav-right"]}>
+          <NavLink to="registration" className={styles["nav-link"]}>
+            <button className={button.button}>Registration</button>
+          </NavLink>
+        </div>
+      </nav>
+    </header>
   );
 };
 

@@ -72,30 +72,35 @@
 .nav {
   display: flex;
   align-items: center;
+  justify-content: center; /* Центруємо всю навігацію */
   width: 100%;
   padding: 0 25px;
+  position: relative;
 }
 
 .nav-left {
-  flex: 1;
+  position: absolute;
+  left: 25px;
+  display: flex;
+  align-items: center;
 }
 
 .nav-center {
   display: flex;
   gap: 40px;
   justify-content: center;
-  flex: 1;
 }
 
 .nav-right {
-  flex: 1;
+  position: absolute;
+  right: 25px;
   display: flex;
-  justify-content: flex-end;
+  align-items: center;
 }
 
 .nav-link {
   text-decoration: none;
-  color: white;
+  color: var(--text-main);
   font-size: 18px;
   transition: color 0.3s;
 }

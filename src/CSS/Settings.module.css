@@ -1,0 +1,12 @@
+.container {
+   padding-top: 70px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.changeTheme {
+  display: flex;
+}
+.changeLang {
+  display: flex;
+}

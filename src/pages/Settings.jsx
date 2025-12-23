@@ -1,27 +1,28 @@
 import React, { useContext } from "react";
 import ThemeButton from "../buttons/ThemeButton";
 import LangButton from "../buttons/LangButton";
-import "../CSS/Settings.css";
+import styles from "../CSS/Settings.module.css";
 import RegistrationContext from "../contexts/RegistrationContext";
+import button from "../CSS/Button.module.css";
 
 const Settings = () => {
   const { registred, setRegistred } = useContext(RegistrationContext);
 
   return (
-    <div className="container">
+    <div className={styles.container}>
       <h1>Settings</h1>
-      <div className="changeTheme">
+      <div className={styles.changeTheme}>
         <p>Change theme: </p>
         <ThemeButton />
       </div>
-      <div className="changeLang">
+      <div className={styles.changeLang}>
         <p>Change language: </p>
         <LangButton />
       </div>
-      <div className="account">
+      <div className={styles.account}>
         <h2>Account Settings</h2>
         <p>Leave account: </p>
-        <button className="button" onClick={setRegistred(false)}>Leave Account</button>
+        <button className={button.button} onClick={() => setRegistred(false)}>Leave Account</button>
       </div>
     </div>
   );

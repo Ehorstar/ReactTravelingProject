@@ -8,9 +8,8 @@ function App() {
   const { theme } = useContext(ThemeContext);
   return (
     <div className={`app theme-${theme}`}>
-      <header>
-        <Header />
-      </header>
+      <Header />
+
       <Outlet />
     </div>
   );

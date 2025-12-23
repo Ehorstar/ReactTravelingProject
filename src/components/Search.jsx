@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import "../CSS/Tours.css";
+import styles from "../CSS/Tours.module.css";
 
 const Search = () => {
   const [text, setText] = useState("");
@@ -21,9 +21,9 @@ const Search = () => {
   };
 
   return (
-    <div className="search">
+    <div className={styles.search}>
       <input
-        className="search-input"
+        className={styles["search-input"]}
         type="text"
         placeholder="🔍Paris..."
         value={text}

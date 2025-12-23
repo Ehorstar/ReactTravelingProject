@@ -1,8 +1,9 @@
 import React, { useContext } from "react";
 import { useLoaderData, useNavigate, useParams } from "react-router-dom";
-import "../CSS/Tour.css";
+import styles from "../CSS/Tour.module.css";
 import { StarFilled } from "@ant-design/icons";
 import RegistrationContext from "../contexts/RegistrationContext";
+import button from "../CSS/Button.module.css";
 
 const Tour = (props) => {
   const tours = useLoaderData();
@@ -20,7 +21,7 @@ const Tour = (props) => {
   };
 
   return (
-    <div className="container">
+    <div className={styles.container}>
       <div>
         <span style={{ fontSize: 28, color: "white" }}>
           {tour.hotel},{" "}
@@ -35,16 +36,16 @@ const Tour = (props) => {
         </span>
       </div>
 
-      <img className="img" src={tour.image} alt={tour.to} />
+      <img className={styles.img} src={tour.image} alt={tour.to} />
 
-      <div className="tour-title">
+      <div className={styles["tour-title"]}>
         <div>
           <div style={{ fontSize: 24, fontFamily: "Poppins" }}>
             {tour.description}
           </div>
         </div>
 
-        <div className="tour-info">
+        <div className={styles["tour-info"]}>
           <h1>Загальна інформація</h1>
 
           <span>Кількість ночей: {tour.days}</span>
@@ -54,12 +55,12 @@ const Tour = (props) => {
           <span>
             Виїзд та повернення: {tour.dateStart} - {tour.dateEnd}
           </span>
-          <span className="price">
-            Ціна за людину: <span className="tour-price"> ${tour.price}</span>
+          <span className={styles.price}>
+            Ціна за людину: <span className={styles["tour-price"]}> ${tour.price}</span>
           </span>
 
           <span>
-            <button onClick={() => checkFunction()} className="button">
+            <button onClick={() => checkFunction()} className={button.button}>
               ORDER
             </button>
           </span>

@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
 import I18nContext from "../contexts/I18nContext";
 import { useLoaderData, useNavigate } from "react-router-dom";
+import styles from "../CSS/Tours.module.css";
+import button from "../CSS/Button.module.css";
 
 import {
   CalendarOutlined,
@@ -18,19 +20,19 @@ const Tours = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="booking-hero">
-      <div className="container">
-        
-        <div className="booking-header">
+    <div className={styles["booking-hero"]}>
+      <div className={styles.container}>
+
+        <div className={styles["tour-header"]}>
           <h1>Доступні тури</h1>
           <Search />
         </div>
 
         {tours.map((tour) => (
-          <div key={tour.id} className="tour">
-            <img className="tour-img" src={tour.image} alt={tour.to} />
+          <div key={tour.id} className={styles.tour}>
+            <img className={styles["tour-img"]} src={tour.image} alt={tour.to} />
 
-            <div className="tour-title">
+            <div className={styles["tour-title"]}>
               <div>
                 <span>
                   <EnvironmentFilled style={{ fontSize: 26, color: "red" }} />
@@ -46,33 +48,33 @@ const Tours = () => {
                   {tour.description}
                 </div>
               </div>
-              <div className="group">
-                <span className="info">
-                  <MoonOutlined style={{ fontSize: 23, color: "white" }} />
+              <div className={styles.group}>
+                <span className={styles.info}>
+                  <MoonOutlined className={styles.icon} />
                   <span style={{ fontSize: 17 }}>{tour.days}</span>
                 </span>
 
-                <span className="info">
-                  <HomeOutlined style={{ fontSize: 23, color: "white" }} />
+                <span className={styles.info}>
+                  <HomeOutlined className={styles.icon} />
                   <span style={{ fontSize: 17 }}>{tour.hotel}</span>
                 </span>
 
-                <span className="info">
-                  <CalendarOutlined style={{ fontSize: 23, color: "white" }} />
+                <span className={styles.info}>
+                  <CalendarOutlined className={styles.icon} />
                   <span style={{ fontSize: 17 }}>{tour.dateStart}</span>
                 </span>
 
-                <span className="info">
-                  <UserOutlined style={{ fontSize: 23, color: "white" }} />
-                  <span className="tour-price">${tour.price}</span>
+                <span className={styles.info}>
+                  <UserOutlined className={styles.icon} />
+                  <span className={styles["tour-price"]}>${tour.price}</span>
                 </span>
 
-                <div className="buying">
+                <div className={styles["buying"]}>
                   <span>
                     <button
                       onClick={() => navigate(`/tour/${tour.to}`)}
-                      className="button"
-                      style={{color: "white", fontWeight: "bold"}}
+                      className={button.button}
+                      style={{fontWeight: "bold"}}
                     >
                       ORDER
                     </button>
