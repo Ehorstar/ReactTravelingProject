@@ -1,15 +1,17 @@
 .container {
-  padding-top: 70px;
   max-width: 1000px;
   margin: 0 auto;
   background-color: var(--bg-card);
   border-radius: 10px;
   padding: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: var(--text-main);
 }
 
 .content {
+  min-height: calc(100vh - 100px);
   padding-top: 100px;
+  background-color: var(--bg-page);
 }
 
 .changeTheme {
@@ -22,7 +24,7 @@
   gap: 10px;
 }
 
-.account{
+.account {
   display: flex;
   gap: 10px;
 }

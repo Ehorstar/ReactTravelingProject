@@ -2,11 +2,11 @@ import React, { useContext } from "react";
 import ThemeButton from "../buttons/ThemeButton";
 import LangButton from "../buttons/LangButton";
 import styles from "../CSS/Settings.module.css";
-import RegistrationContext from "../contexts/RegistrationContext";
+import AuthContext from "../contexts/AuthContext";
 import button from "../CSS/Button.module.css";
 
 const Settings = () => {
-  const { registred, setRegistred } = useContext(RegistrationContext);
+  const { loged, setLoged } = useContext(AuthContext);
 
   return (
     <div className={styles.content}>
@@ -23,16 +23,13 @@ const Settings = () => {
         <h2>Account Settings</h2>
 
         <div className={styles.account}>
-          <span>
-            <p>Leave account: </p>
-            <button
-              className={button.buttonDelete}
-              onClick={() => setRegistred(false)}
-            >
-              Leave Account
-            </button>
-          </span>
-
+          <span>Leave account: </span>
+          <button
+            className={button.buttonDelete}
+            onClick={() => setLoged(false)}
+          >
+            Leave Account
+          </button>
         </div>
       </div>
     </div>

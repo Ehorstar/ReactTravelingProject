@@ -24,6 +24,7 @@ const TripsProvider = ({ children }) => {
     <TripsContext.Provider
       value={{
         trips,
+        tripsCount: trips.length,
         addToTrips,
         removeFromTrips,
       }}

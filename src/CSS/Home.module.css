@@ -9,19 +9,11 @@
   align-items: center;
 }
 
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.55);
-}
-
 .hero-content {
-  position: relative; 
+  position: relative;
   text-align: center;
   color: white;
 }
-
 
 .hero-card {
   background-image: url("https://images.pexels.com/photos/167684/pexels-photo-167684.jpeg");
@@ -29,42 +21,18 @@
   background-position: center;
   padding: 40px 50px;
   border-radius: 20px;
-  box-shadow: 0 8px 40px rgba(0,0,0,0.4);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
   max-width: 500px;
   margin: 0 auto;
   position: relative;
 }
 
-.hero-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.35);
-  border-radius: 20px;
-}
-
-.hero-card * {
+.hero-card {
   position: relative;
   z-index: 2;
 }
 
-.btn-home{
-  padding: 12px 25px;
-  border: 2px solid aquamarine;
-  background: transparent;
-  color: aquamarine;
-  border-radius: 8px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.btn-home:hover {
-  background: aquamarine;
-  color: white;
-}
-
-.logo{
+.logo {
   width: 40px;
   height: 40px;
 }
@@ -72,7 +40,7 @@
 .nav {
   display: flex;
   align-items: center;
-  justify-content: center; /* Центруємо всю навігацію */
+  justify-content: center;
   width: 100%;
   padding: 0 25px;
   position: relative;
@@ -104,4 +72,3 @@
   font-size: 18px;
   transition: color 0.3s;
 }
-

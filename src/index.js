@@ -6,19 +6,19 @@ import { RouterProvider } from "react-router";
 import ThemeProvider from "./providers/ThemeProvider";
 import I18nProvider from "./providers/I18nProvider";
 import router from "./Router";
-import RegistrationProvider from "./providers/RegistrationProvider";
+import AuthProvider from "./providers/AuthProvider";
 import TripsProvider from "./providers/TripsProvider";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <TripsProvider>
-    <RegistrationProvider>
+    <AuthProvider>
       <I18nProvider>
         <ThemeProvider>
           <RouterProvider router={router} />
         </ThemeProvider>
       </I18nProvider>
-    </RegistrationProvider>
+    </AuthProvider>
   </TripsProvider>
 );
 

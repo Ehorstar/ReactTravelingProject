@@ -10,6 +10,7 @@ import { getSearchTours } from "./loaders/SearchLoader";
 import Tours from "./pages/Tours";
 import Tour from "./pages/Tour";
 import Reservation from "./pages/Reservation";
+import Login from "./pages/Login";
 
 const router = createBrowserRouter([
   {
@@ -56,6 +57,10 @@ const router = createBrowserRouter([
       {
         path: "test",
         element: <Reservation />,
+      },
+      {
+        path: "login",
+        element: <Login />,
       }
     ],
   },
