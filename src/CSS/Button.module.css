@@ -15,7 +15,7 @@
 }
 
 .buttonDelete {
-  padding: 5px 15px;
+  padding: 10px;
   border: 2px solid red;
   background: transparent;
   color: red;
@@ -28,4 +28,32 @@
 .buttonDelete:hover {
   background: red;
   color: white;
+}
+
+.buttonChangeTheme { 
+  border: none;
+  background: transparent;
+  color: var(--theme-btn);
+  border-radius: 8px;
+  font-size: 25px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.buttonChangeTheme:hover {
+  color: var(--active);
+}
+
+.buttonChangeLang { 
+  border: none;
+  background: transparent;
+  color: var(--lang-btn);
+  border-radius: 8px;
+  font-size: 25px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.buttonChangeLang:hover {
+  color: var(--active);
 }

@@ -2,8 +2,8 @@
   max-width: 1000px;
   margin: 0 auto;
   background-color: var(--bg-card);
-  border-radius: 10px;
-  padding: 15px;
+  border-radius: 12px;
+  padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   color: var(--text-main);
 }
@@ -14,17 +14,79 @@
   background-color: var(--bg-page);
 }
 
-.changeTheme {
-  display: flex;
-  gap: 10px;
+h1 {
+  margin-bottom: 20px;
 }
 
-.changeLang {
-  display: flex;
-  gap: 10px;
+h2 {
+  margin: 30px 0 15px;
 }
 
-.account {
+.box {
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: var(--bg-card);
+}
+
+.danger {
+  border: 1px solid #ef4444;
+  background: rgba(239, 68, 68, 0.04);
+}
+
+.row {
   display: flex;
-  gap: 10px;
+  align-items: flex-start;        
+  justify-content: space-between;
+  gap: 40px;
+  
+}
+
+.row:not(:last-child) {
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.text {
+  padding-top: 8px;
+  white-space: nowrap;
+}
+
+.rowInput {
+  width: 260px;
+  border-radius: 8px;
+  padding: 10px 14px;
+  border: 1px solid #d1d5db;
+  background-color: var(--bg-card);
+  color: var(--text-main);
+}
+
+.rowInput:focus {
+  outline: none;
+  border-color: #38bdf8;
+  box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.3);
+}
+
+.rowPasswords {
+  display: flex;
+  flex-direction: column;
+  align-items: center;          
+  gap: 12px;
+}
+
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.error {
+  color: #ef4444;
+  font-size: 12px;
+  min-height: 14px;
+  text-align: left;
+  width: 100%;
+  margin-top: 2px;
+  padding-left: 0;
 }

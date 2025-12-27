@@ -7,8 +7,8 @@ const ThemeButton = () => {
   const { theme, toggleTheme } = useContext(ThemeContext);
   return (
     <div>
-      <button onClick={toggleTheme} className={button.button}>
-        {theme === "light" ? <MoonOutlined /> : <SunOutlined />}
+      <button onClick={toggleTheme} className={button.buttonChangeTheme}>
+        {theme === "light" ? <SunOutlined /> : <MoonOutlined />}
       </button>
     </div>
   );

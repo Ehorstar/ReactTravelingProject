@@ -2,8 +2,13 @@ import { NavLink } from "react-router";
 import logo from "../assets/logo.png";
 import styles from "../CSS/Home.module.css";
 import button from "../CSS/Button.module.css";
+import AuthContext from "../contexts/AuthContext";
+import { useContext } from "react";
+import { UserOutlined } from "@ant-design/icons";
 
 const Header = () => {
+  const savedUser = JSON.parse(localStorage.getItem("user"));
+  const { loged } = useContext(AuthContext);
   return (
     <header>
       <nav className={styles.nav}>
@@ -24,9 +29,18 @@ const Header = () => {
         </div>
 
         <div className={styles["nav-right"]}>
-          <NavLink to="registration" className={styles["nav-link"]}>
-            <button className={button.button}>Registration</button>
-          </NavLink>
+          <div className={styles.underline}>
+            {loged ? (
+              <span className={styles.user}>
+                <UserOutlined className={styles.icon} />
+                {savedUser.name}
+              </span>
+            ) : (
+              <NavLink to="registration" className={styles["nav-link"]}>
+                <button className={button.button}>Registration</button>
+              </NavLink>
+            )}
+          </div>
         </div>
       </nav>
     </header>

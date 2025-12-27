@@ -1,11 +1,11 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import * as Yup from "yup";
 import I18nContext from "../contexts/I18nContext";
 import styles from "../CSS/Login.module.css";
 import AuthContext from "../contexts/AuthContext";
 import button from "../CSS/Button.module.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const initialValues = {
   name: "",
@@ -24,13 +24,21 @@ const validationSchema = Yup.object().shape({
     )
     .required("Password is required"),
 });
+
 const Login = () => {
   const { currentTexts } = useContext(I18nContext);
   const { loged, setLoged } = useContext(AuthContext);
+  const savedUser = JSON.parse(localStorage.getItem("user"));
+  const navigate = useNavigate();
 
   const submitHandler = (values, { resetForm }) => {
-    setLoged(true);
-    console.log(values);
+    if (values.name === savedUser.name && values.password === savedUser.password) {
+      setLoged(true);
+      navigate("/");
+    } else {
+      alert("User not found");
+    }
+
     resetForm();
   };
 
@@ -39,6 +47,7 @@ const Login = () => {
       <div className={styles.content}>
         <div className={styles.container}>
           <h1 className={styles.title}>Login</h1>
+
           <Formik
             initialValues={initialValues}
             onSubmit={submitHandler}
