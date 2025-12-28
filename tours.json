@@ -12,7 +12,7 @@
     "hotel": "Hotel Lumiere",
     "rating": 4.6,
     "category": "Romantic",
-    "image": "https://images.pexels.com/photos/2363/france-landmark-lights-night.jpg",
+    "image": "https://images.pexels.com/photos/1850619/pexels-photo-1850619.jpeg",
     "description": "Романтичний тур у серце Франції з прогулянками біля Ейфелевої вежі."
   },
   {
@@ -92,7 +92,7 @@
     "hotel": "Vienna Imperial",
     "rating": 4.5,
     "category": "Classical",
-    "image": "https://images.pexels.com/photos/161074/vienna-st-charles-s-church-downtown-church-161074.jpeg",
+    "image": "https://images.pexels.com/photos/389865/pexels-photo-389865.jpeg",
     "description": "Класична Європа: концерти Моцарта та палаци Габсбургів."
   },
   {
@@ -124,7 +124,7 @@
     "hotel": "Berlin City House",
     "rating": 4.1,
     "category": "Urban",
-    "image": "https://images.pexels.com/photos/1963082/pexels-photo-1963082.jpeg",
+    "image": "https://images.pexels.com/photos/65567/pexels-photo-65567.jpeg",
     "description": "Сучасна архітектура, музеї та нічне життя Берліна."
   },
   {
@@ -140,7 +140,7 @@
     "hotel": "Canal View Hotel",
     "rating": 4.4,
     "category": "Relax",
-    "image": "https://images.pexels.com/photos/2031706/pexels-photo-2031706.jpeg",
+    "image": "https://images.pexels.com/photos/1414467/pexels-photo-1414467.jpeg",
     "description": "Канали, музеї та велосипедні екскурсії Амстердамом."
   },
   {
@@ -204,7 +204,7 @@
     "hotel": "Nordic Breeze Hotel",
     "rating": 4.2,
     "category": "Scandinavian",
-    "image": "https://images.pexels.com/photos/3117216/pexels-photo-3117216.jpeg",
+    "image": "https://images.pexels.com/photos/5193476/pexels-photo-5193476.jpeg",
     "description": "Скандинавські краєвиди, море та сучасна архітектура."
   },
   {
@@ -364,7 +364,7 @@
   "hotel": "Venice Canal Hotel",
   "rating": 4.6,
   "category": "Romantic",
-  "image": "https://images.pexels.com/photos/208701/pexels-photo-208701.jpeg",
+  "image": "https://images.pexels.com/photos/1144265/pexels-photo-1144265.jpeg",
   "description": "Гондоли, канали та романтична атмосфера Венеції."
 },
 {
@@ -396,7 +396,7 @@
   "hotel": "Grand Place Hotel",
   "rating": 4.2,
   "category": "City Tour",
-  "image": "https://images.pexels.com/photos/161931/pexels-photo-161931.jpeg",
+  "image": "https://images.pexels.com/photos/2960887/pexels-photo-2960887.jpeg",
   "description": "Шоколад, вафлі та середньовічні площі."
 },
 {
@@ -476,7 +476,7 @@
   "hotel": "Andalusian Courtyard Hotel",
   "rating": 4.5,
   "category": "Cultural",
-  "image": "https://images.pexels.com/photos/1388033/pexels-photo-1388033.jpeg",
+  "image": "https://images.pexels.com/photos/52062/pexels-photo-52062.jpeg",
   "description": "Фламенко, андалузька архітектура та сонце."
 }
 
