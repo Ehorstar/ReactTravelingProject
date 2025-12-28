@@ -1,31 +1,105 @@
-.content {
-  padding-top: 100px; 
-}
-
-.container {
-  max-width: 1000px;
-  margin: 0 auto;
-  background-color: var(--bg-page);
-  border-radius: 10px;
-  padding: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  color: var(--text-main)
-}
-
-.tours{
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    background-color: var(--bg-card);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 10px;
-    border-radius: 10px;
-}
-
 .hero {
   min-height: 100vh;
   background-image: url("https://images.pexels.com/photos/7706294/pexels-photo-7706294.jpeg");
   background-size: cover;
   background-position: center;
-  position: relative;
+}
+
+.content {
+  padding-top: 100px;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 24px;
+  background-color: var(--bg-page);
+  border-radius: 14px;
+  color: var(--text-main);
+}
+
+.pageTitle {
+  margin-bottom: 24px;
+}
+
+.empty {
+  text-align: center;
+  color: var(--text-muted);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: 1fr 200px;
+  gap: 24px;
+  padding: 20px;
+  background-color: var(--bg-card);
+  border-radius: 14px;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.destination {
+  color: var(--text-main);
+}
+
+.category {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 15px;
+}
+
+.passengers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.passenger {
+  font-size: 14px;
+  padding: 4px 10px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-left: 1px solid var(--header-border);
+}
+
+.totalLabel {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.price {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--success);
 }

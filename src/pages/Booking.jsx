@@ -44,106 +44,108 @@ const Booking = () => {
   };
 
   return (
-    <div className={styles.container}>
-      <h1>
-        Booking <EnvironmentFilled style={{ fontSize: 26, color: "red" }} />
-        {tour.countryTo}
-      </h1>
-      <Formik
-        initialValues={initialValues}
-        validationSchema={validationSchema}
-        onSubmit={submitHandler}
-      >
-        {({ values, setFieldValue }) => {
-          const handleAmountChange = (e) => {
-            const amount = Number(e.target.value);
+    <div className={styles.hero}>
+      <div className={styles.container}>
+        <h1>
+          Booking <EnvironmentFilled style={{ fontSize: 26, color: "red" }} />
+          {tour.countryTo}
+        </h1>
+        <Formik
+          initialValues={initialValues}
+          validationSchema={validationSchema}
+          onSubmit={submitHandler}
+        >
+          {({ values, setFieldValue }) => {
+            const handleAmountChange = (e) => {
+              const amount = Number(e.target.value);
 
-            setFieldValue("amount", amount);
+              setFieldValue("amount", amount);
 
-            const newPassengers = Array.from(
-              { length: amount },
-              (_, i) => values.passengers[i] || { name: "", age: "" }
-            );
+              const newPassengers = Array.from(
+                { length: amount },
+                (_, i) => values.passengers[i] || { name: "", age: "" }
+              );
 
-            setFieldValue("passengers", newPassengers);
-          };
+              setFieldValue("passengers", newPassengers);
+            };
 
-          return (
-            <Form>
-              <div className={styles.dates}>
-                <span>
-                  {tour.dateStart}-{tour.dateEnd}
-                </span>
-              </div>
-
-              <div className={styles.price}>
-                <span>Price for 1 person: {tour.price}</span>
-              </div>
-              <div>
-                <div className={styles["people-amount"]}>
-                  <label>Кількість осіб</label>
-
-                  <Field
-                    as="select"
-                    name="amount"
-                    onChange={handleAmountChange}
-                  >
-                    <option value={1}>1 person</option>
-                    <option value={2}>2 people</option>
-                    <option value={3}>3 people</option>
-                    <option value={4}>4 people</option>
-                  </Field>
+            return (
+              <Form>
+                <div className={styles.dates}>
+                  <span>
+                    {tour.dateStart}-{tour.dateEnd}
+                  </span>
                 </div>
 
-                <FieldArray name="passengers">
-                  {() => (
-                    <div className={styles["form-passengers"]}>
-                      <h3>Дані пасажирів:</h3>
+                <div className={styles.price}>
+                  <span>Price for 1 person: {tour.price}</span>
+                </div>
+                <div>
+                  <div className={styles["people-amount"]}>
+                    <label>Кількість осіб</label>
 
-                      {values.passengers.map((_, index) => (
-                        <div key={index} className={styles["passenger-row"]}>
-                          <div className={styles.field}>
-                            <Field
-                              name={`passengers.${index}.name`}
-                              placeholder={`Ім'я ${index + 1} пасажира `}
-                            />
-                            <ErrorMessage
-                              name={`passengers.${index}.name`}
-                              component="div"
-                              className={styles.error}
-                            />
+                    <Field
+                      as="select"
+                      name="amount"
+                      onChange={handleAmountChange}
+                    >
+                      <option value={1}>1 person</option>
+                      <option value={2}>2 people</option>
+                      <option value={3}>3 people</option>
+                      <option value={4}>4 people</option>
+                    </Field>
+                  </div>
+
+                  <FieldArray name="passengers">
+                    {() => (
+                      <div className={styles["form-passengers"]}>
+                        <h3>Дані пасажирів:</h3>
+
+                        {values.passengers.map((_, index) => (
+                          <div key={index} className={styles["passenger-row"]}>
+                            <div className={styles.field}>
+                              <Field
+                                name={`passengers.${index}.name`}
+                                placeholder={`Ім'я ${index + 1} пасажира `}
+                              />
+                              <ErrorMessage
+                                name={`passengers.${index}.name`}
+                                component="div"
+                                className={styles.error}
+                              />
+                            </div>
+
+                            <div className={styles.field}>
+                              <Field
+                                name={`passengers.${index}.age`}
+                                placeholder="Вік"
+                                type="number"
+                              />
+                              <ErrorMessage
+                                name={`passengers.${index}.age`}
+                                component="div"
+                                className={styles.error}
+                              />
+                            </div>
                           </div>
+                        ))}
+                      </div>
+                    )}
+                  </FieldArray>
+                </div>
 
-                          <div className={styles.field}>
-                            <Field
-                              name={`passengers.${index}.age`}
-                              placeholder="Вік"
-                              type="number"
-                            />
-                            <ErrorMessage
-                              name={`passengers.${index}.age`}
-                              component="div"
-                              className={styles.error}
-                            />
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  )}
-                </FieldArray>
-              </div>
+                <div className={styles["total-price"]}>
+                  <span>Total price: ${tour.price * values.amount}</span>
+                </div>
 
-              <div className={styles["total-price"]}>
-                <span>Total price: ${tour.price * values.amount}</span>
-              </div>
-
-              <button className={button.button} type="submit">
-                Book
-              </button>
-            </Form>
-          );
-        }}
-      </Formik>
+                <button className={button.button} type="submit">
+                  Book
+                </button>
+              </Form>
+            );
+          }}
+        </Formik>
+      </div>
     </div>
   );
 };
