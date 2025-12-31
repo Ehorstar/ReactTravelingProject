@@ -76,7 +76,7 @@ const Tours = () => {
                       className={button.button}
                       style={{fontWeight: "bold"}}
                     >
-                      ORDER
+                      LOOK
                     </button>
                     
                   </span>

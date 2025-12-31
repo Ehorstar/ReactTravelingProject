@@ -1,50 +1,96 @@
-.hero{
-  position: relative;
-  padding-top: 100px;
+.hero {
   min-height: 100vh;
-  background: url("https://images.pexels.com/photos/247599/pexels-photo-247599.jpeg");
+  padding-top: 100px;
+  background-color: var(--bg-page);
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
-  padding-bottom: 40px;
 }
 
-.container{
-  max-width: 1000px;
+.container {
+  max-width: 600px;
   margin: 0 auto;
   background-color: var(--bg-card);
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 14px;
+  padding: 24px;
   color: var(--text-main);
 }
 
-.dates{
-    display: flex;
-    gap: 10px;
-}
-
-.people-amount{
-    display: flex;
-    gap: 10px;
-    
-}
-
-.passenger-row {
+.header {
   display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.location {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 25px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.selectRow {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.selectRow select {
+  padding: 6px 10px;
+}
+
+.passengers {
+  display: flex;
+  flex-direction: column;
   gap: 16px;
-  align-items: flex-start;
+}
+
+.passenger {
+  display: grid;
+  grid-template-columns: 1fr 120px;
+  gap: 16px;
 }
 
 .field {
   display: flex;
   flex-direction: column;
-  margin-top: 10px;
+  border-radius: 8px;
 }
 
-
 .error {
-  min-height: 10px;
-  font-size: 10px;
+  min-height: 12px;
+  font-size: 11px;
   color: red;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1.5px solid var(--text-muted);
+  padding-top: 16px;
+}
+
+.total {
+  font-size: 18px;
+}
+
+.total span {
+  font-weight: 700;
+  color: var(--success);
+}
+
+.input{
+  padding: 6px 10px;
+  border-radius: 8px;
+  background-color: var(--bg-card);
+  color: var(--text-main);
+  font-size: 16px;
+  border: 1px solid var(--text-muted);
 }

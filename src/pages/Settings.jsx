@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import ThemeButton from "../buttons/ThemeButton";
 import LangButton from "../buttons/LangButton";
 import styles from "../CSS/Settings.module.css";
@@ -7,10 +7,13 @@ import button from "../CSS/Button.module.css";
 import I18nContext from "../contexts/I18nContext";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import * as Yup from "yup";
+import { useNavigate } from "react-router-dom";
 
 const Settings = () => {
-  const { setLoged } = useContext(AuthContext);
+  const { loged, setLoged } = useContext(AuthContext);
   const { currentTexts } = useContext(I18nContext);
+  const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
 
   const initialValues = {
     name: "",
@@ -28,14 +31,21 @@ const Settings = () => {
       "Password incorrect"
     ),
 
-    repeatpassword: Yup.string()
-      .oneOf([Yup.ref("password")], "Passwords must match")
-      .required("Repeat password"),
+    repeatpassword: Yup.string().when("password", {
+      is: (val) => val && val.length > 0,
+      then: (schema) =>
+        schema
+          .oneOf([Yup.ref("password")], "Passwords must match")
+          .required("Repeat password"),
+      otherwise: (schema) => schema.notRequired(),
+    }),
   });
 
   const submitHandler = (values, { resetForm }) => {
     const savedUser = JSON.parse(localStorage.getItem("user"));
     if (!savedUser) return;
+    if (!loged) return navigate("/registration");
+
     const updatedUser = {
       ...savedUser,
       name: values.name.trim() || savedUser.name,
@@ -43,6 +53,11 @@ const Settings = () => {
     };
     localStorage.setItem("user", JSON.stringify(updatedUser));
     resetForm();
+  };
+
+  const logoutHandler = () => {
+    if (!loged) return navigate("/registration");
+    setOpen(true);
   };
 
   return (
@@ -123,16 +138,43 @@ const Settings = () => {
           )}
         </Formik>
         <div className={`${styles.box} ${styles.danger}`}>
-          <div className={styles.row} style={{ padding: "5px" }}>
+          <div className={styles.rowQuite} style={{ padding: "5px" }}>
             <span>Leave account</span>
             <button
               className={button.buttonDelete}
-              onClick={() => setLoged(false)}
+              onClick={() => logoutHandler()}
             >
               Leave Account
             </button>
           </div>
         </div>
+        {open && (
+          <div className={styles.overlay}>
+            <div className={styles.modal}>
+              <h3>Leave account?</h3>
+              <p>You will be logged out from this account.</p>
+
+              <div className={styles.actions}>
+                <button
+                  className={button.button}
+                  onClick={() => setOpen(false)}
+                >
+                  Cancel
+                </button>
+
+                <button
+                  className={button.buttonDelete}
+                  onClick={() => {
+                    setLoged(false);
+                    setOpen(false);
+                  }}
+                >
+                  Leave
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

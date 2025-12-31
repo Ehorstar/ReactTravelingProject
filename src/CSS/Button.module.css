@@ -40,10 +40,6 @@
   transition: 0.3s;
 }
 
-.buttonChangeTheme:hover {
-  color: var(--active);
-}
-
 .buttonChangeLang { 
   border: none;
   background: transparent;
@@ -52,8 +48,4 @@
   font-size: 25px;
   cursor: pointer;
   transition: 0.3s;
-}
-
-.buttonChangeLang:hover {
-  color: var(--active);
 }
