@@ -57,7 +57,9 @@ const Registration = () => {
     <div className={styles["registration-hero"]}>
       <div className={styles.content}>
         <div className={styles.container}>
-          <h1 className={styles.title}>{currentTexts.titleRegistration}</h1>
+          <h1 className={styles.title}>
+            {currentTexts.auth.titleRegistration}
+          </h1>
           <Formik
             initialValues={initialValues}
             onSubmit={submitHandler}
@@ -67,7 +69,7 @@ const Registration = () => {
               <Form>
                 <div className={styles["registration-form"]}>
                   <div>
-                    <Field name="name" placeholder={currentTexts.name} />
+                    <Field name="name" placeholder={currentTexts.auth.name} />
                     <ErrorMessage
                       name="name"
                       component="div"
@@ -78,7 +80,7 @@ const Registration = () => {
                     <Field
                       name="age"
                       type="number"
-                      placeholder={currentTexts.age}
+                      placeholder={currentTexts.auth.age}
                     />
                     <ErrorMessage
                       name="age"
@@ -90,7 +92,7 @@ const Registration = () => {
                     <Field
                       type="password"
                       name="password"
-                      placeholder={currentTexts.password}
+                      placeholder={currentTexts.auth.password}
                     />
                     <ErrorMessage
                       name="password"
@@ -102,7 +104,7 @@ const Registration = () => {
                     <Field
                       type="password"
                       name="repeatpassword"
-                      placeholder={currentTexts.repeatpassword}
+                      placeholder={currentTexts.auth.repeatpassword}
                     />
                     <ErrorMessage
                       name="repeatpassword"
@@ -114,12 +116,12 @@ const Registration = () => {
 
                 <div className={styles.button}>
                   <button className={button.button} type="submit">
-                    {currentTexts.button}
+                    {currentTexts.common.button}
                   </button>
                 </div>
 
                 <Link to="/login" className={styles.link}>
-                  Already have an account
+                  {currentTexts.auth.alreadyHaveAccount}
                 </Link>
               </Form>
             )}

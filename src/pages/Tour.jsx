@@ -4,6 +4,7 @@ import styles from "../CSS/Tour.module.css";
 import { StarFilled } from "@ant-design/icons";
 import AuthContext from "../contexts/AuthContext";
 import button from "../CSS/Button.module.css";
+import I18nContext from "../contexts/I18nContext";
 
 const Tour = (props) => {
   const tours = useLoaderData();
@@ -11,6 +12,7 @@ const Tour = (props) => {
   const { to } = useParams();
   const tour = tours.find((t) => t.to === to);
   const navigate = useNavigate();
+  const { currentTexts } = useContext(I18nContext);
 
   const checkFunction = () => {
     if (loged) {
@@ -42,27 +44,28 @@ const Tour = (props) => {
         </div>
 
         <div className={styles.tourInfo}>
-          <p className={styles.infoTitle}>Загальна інформація:</p>
+          <p className={styles.infoTitle}>{currentTexts.tour.generalInfo}</p>
           <p>
-            Кількість ночей: <strong>{tour.days}</strong>
+            {currentTexts.tour.nights}
+            <strong>{tour.days}</strong>
           </p>
           <p>
-            Готель: <strong>{tour.hotel}</strong>
+            {currentTexts.tour.hotel}: <strong>{tour.hotel}</strong>
           </p>
           <p>
-            Виїзд та повернення:{" "}
+            {currentTexts.tour.departureAndReturn}:{" "}
             <strong>
               {tour.dateStart} – {tour.dateEnd}
             </strong>
           </p>
           <div className={styles.line}>
             <p className={styles.tourPrice}>
-              Ціна за людину:
+              {currentTexts.tour.pricePerPerson}:
               <span className={styles.price}> ${tour.price}</span>
             </p>
             <p className={styles.tourButton}>
               <button onClick={checkFunction} className={button.button}>
-                ORDER
+                {currentTexts.common.book}
               </button>
             </p>
           </div>

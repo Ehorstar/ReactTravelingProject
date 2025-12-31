@@ -30,9 +30,12 @@ const Login = () => {
   const { loged, setLoged } = useContext(AuthContext);
   const savedUser = JSON.parse(localStorage.getItem("user"));
   const navigate = useNavigate();
-
+  
   const submitHandler = (values, { resetForm }) => {
-    if (values.name === savedUser.name && values.password === savedUser.password) {
+    if (
+      values.name === savedUser.name &&
+      values.password === savedUser.password
+    ) {
       setLoged(true);
       navigate("/");
     } else {
@@ -46,7 +49,7 @@ const Login = () => {
     <div className={styles["registration-hero"]}>
       <div className={styles.content}>
         <div className={styles.container}>
-          <h1 className={styles.title}>Login</h1>
+          <h1 className={styles.title}>{currentTexts.auth.titleLogin}</h1>
 
           <Formik
             initialValues={initialValues}
@@ -57,7 +60,7 @@ const Login = () => {
               <Form>
                 <div className={styles["registration-form"]}>
                   <div>
-                    <Field name="name" placeholder={currentTexts.name} />
+                    <Field name="name" placeholder={currentTexts.auth.nameLogin} />
                     <ErrorMessage
                       name="name"
                       component="div"
@@ -68,7 +71,7 @@ const Login = () => {
                     <Field
                       type="password"
                       name="password"
-                      placeholder={currentTexts.password}
+                      placeholder={currentTexts.auth.age}
                     />
                     <ErrorMessage
                       name="password"
@@ -80,12 +83,12 @@ const Login = () => {
 
                 <div className={styles.button}>
                   <button className={button.button} type="submit">
-                    {currentTexts.button}
+                    {currentTexts.common.button}
                   </button>
                 </div>
 
                 <Link to="/registration" className={styles.link}>
-                  Registration
+                  {currentTexts.nav.register}
                 </Link>
               </Form>
             )}

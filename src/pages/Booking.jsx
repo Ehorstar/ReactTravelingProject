@@ -6,6 +6,7 @@ import styles from "../CSS/Booking.module.css";
 import { EnvironmentFilled } from "@ant-design/icons";
 import TripsContext from "../contexts/TripsContext";
 import button from "../CSS/Button.module.css";
+import I18nContext from "../contexts/I18nContext";
 
 const initialValues = {
   amount: 1,
@@ -34,6 +35,7 @@ const Booking = () => {
   const { countryTo } = useParams();
   const navigate = useNavigate();
   const tour = tours.find((t) => t.countryTo === countryTo);
+  const { currentTexts } = useContext(I18nContext);
 
   const submitHandler = (values, { resetForm }) => {
     addToTrips({ ...tour, ...values });
@@ -45,7 +47,7 @@ const Booking = () => {
     <div className={styles.hero}>
       <div className={styles.container}>
         <div className={styles.header}>
-          <h1>Booking</h1>
+          <h1>{currentTexts.booking.title}</h1>
           <span className={styles.location}>
             <EnvironmentFilled style={{ fontSize: 26, color: "red" }} />
             {tour.countryTo}
@@ -74,7 +76,7 @@ const Booking = () => {
             return (
               <Form className={styles.form}>
                 <div className={styles.selectRow}>
-                  <label>Passengers</label>
+                  <label>{currentTexts.booking.passengers}</label>
                   <Field
                     className={styles.input}
                     as="select"
@@ -91,7 +93,7 @@ const Booking = () => {
                 <FieldArray name="passengers">
                   {() => (
                     <div className={styles.passengers}>
-                      <h3>Passenger details</h3>
+                      <h3>{currentTexts.booking.passengerDetails}</h3>
 
                       {values.passengers.map((_, index) => (
                         <div key={index} className={styles.passenger}>
@@ -99,7 +101,7 @@ const Booking = () => {
                             <Field
                               name={`passengers.${index}.name`}
                               className={styles.input}
-                              placeholder={`Name`}
+                              placeholder={currentTexts.booking.passengerName}
                             />
                             <ErrorMessage
                               name={`passengers.${index}.name`}
@@ -113,7 +115,7 @@ const Booking = () => {
                               className={styles.input}
                               name={`passengers.${index}.age`}
                               type="number"
-                              placeholder="Age"
+                              placeholder={currentTexts.booking.passengerAge}
                             />
                             <ErrorMessage
                               name={`passengers.${index}.age`}
@@ -129,11 +131,12 @@ const Booking = () => {
 
                 <div className={styles.footer}>
                   <div className={styles.total}>
-                    Total: <span>${tour.price * values.amount}</span>
+                    {currentTexts.booking.total}:{" "}
+                    <span>${tour.price * values.amount}</span>
                   </div>
 
                   <button className={button.button} type="submit">
-                    Book
+                    {currentTexts.common.book}
                   </button>
                 </div>
               </Form>

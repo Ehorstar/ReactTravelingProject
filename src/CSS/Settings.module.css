@@ -11,6 +11,7 @@
 .content {
   min-height: calc(100vh - 100px);
   padding-top: 100px;
+  padding-bottom: 30px;
   background-color: var(--bg-page);
 }
 
@@ -89,11 +90,9 @@ h2 {
 .error {
   color: #ef4444;
   font-size: 12px;
-  min-height: 14px;
+  min-height: 10px;
   text-align: left;
   width: 100%;
-  margin-top: 2px;
-  padding-left: 0;
 }
 
 .overlay {
@@ -129,4 +128,10 @@ h2 {
   display: flex;
   gap: 12px;
   justify-content: center;
+}
+
+.inputBlock {
+  display: flex;
+  flex-direction: column;
+  width: 260px;
 }

@@ -63,21 +63,21 @@ const Settings = () => {
   return (
     <div className={styles.content}>
       <div className={styles.container}>
-        <h1>Main Settings</h1>
+        <h1>{currentTexts.settings.main}</h1>
 
         <div className={styles.box}>
           <div className={styles.row} style={{ paddingBottom: "10px" }}>
-            <span>Change theme</span>
+            <span>{currentTexts.settings.changeTheme}</span>
             <ThemeButton />
           </div>
 
           <div className={styles.row} style={{ paddingTop: "14px" }}>
-            <span>Change language</span>
+            <span>{currentTexts.settings.changeLanguage}</span>
             <LangButton />
           </div>
         </div>
 
-        <h2>Account Settings</h2>
+        <h2>{currentTexts.settings.account}</h2>
 
         <Formik
           initialValues={initialValues}
@@ -88,25 +88,29 @@ const Settings = () => {
             <Form>
               <div className={styles.box}>
                 <div className={styles.row} style={{ paddingBottom: "17px" }}>
-                  <span>Change name</span>
-                  <Field
-                    name="name"
-                    placeholder="New name"
-                    className={styles.rowInput}
-                  />
-                  <ErrorMessage
-                    name="name"
-                    component="div"
-                    className={styles.error}
-                  />
+                  <span>{currentTexts.settings.changeName}</span>
+                  <div className={styles.rowPasswords}>
+                    <Field
+                      name="name"
+                      placeholder={currentTexts.settings.newName}
+                      className={styles.rowInput}
+                    />
+                    <ErrorMessage
+                      name="name"
+                      component="div"
+                      className={styles.error}
+                    />
+                  </div>
                 </div>
                 <div className={styles.row} style={{ paddingTop: "15px" }}>
-                  <span className={styles.text}>Change password</span>
+                  <span className={styles.text}>
+                    {currentTexts.settings.changePassword}
+                  </span>
                   <div className={styles.rowPasswords}>
                     <Field
                       type="password"
                       name="password"
-                      placeholder="New password"
+                      placeholder={currentTexts.settings.newPassword}
                       className={styles.rowInput}
                     />
                     <ErrorMessage
@@ -118,7 +122,7 @@ const Settings = () => {
                     <Field
                       type="password"
                       name="repeatpassword"
-                      placeholder="Repeat new password"
+                      placeholder={currentTexts.settings.repeatNewPassword}
                       className={styles.rowInput}
                     />
                     <ErrorMessage
@@ -128,7 +132,7 @@ const Settings = () => {
                     />
                     <div className={styles.buttons}>
                       <button className={button.button} type="submit">
-                        {currentTexts.button}
+                        {currentTexts.common.button}
                       </button>
                     </div>
                   </div>
@@ -139,27 +143,27 @@ const Settings = () => {
         </Formik>
         <div className={`${styles.box} ${styles.danger}`}>
           <div className={styles.rowQuite} style={{ padding: "5px" }}>
-            <span>Leave account</span>
+            <span>{currentTexts.settings.leaveAccount}</span>
             <button
               className={button.buttonDelete}
               onClick={() => logoutHandler()}
             >
-              Leave Account
+              {currentTexts.settings.leaveAccount}
             </button>
           </div>
         </div>
         {open && (
           <div className={styles.overlay}>
             <div className={styles.modal}>
-              <h3>Leave account?</h3>
-              <p>You will be logged out from this account.</p>
+              <h3>{currentTexts.settings.confirmLogout}</h3>
+              <p>{currentTexts.settings.logoutMessage}</p>
 
               <div className={styles.actions}>
                 <button
                   className={button.button}
                   onClick={() => setOpen(false)}
                 >
-                  Cancel
+                  {currentTexts.common.cancel}
                 </button>
 
                 <button
@@ -169,7 +173,7 @@ const Settings = () => {
                     setOpen(false);
                   }}
                 >
-                  Leave
+                  {currentTexts.settings.leaveAccount}
                 </button>
               </div>
             </div>

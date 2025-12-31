@@ -5,10 +5,12 @@ import button from "../CSS/Button.module.css";
 import AuthContext from "../contexts/AuthContext";
 import { useContext } from "react";
 import { UserOutlined } from "@ant-design/icons";
+import I18nContext from "../contexts/I18nContext";
 
 const Header = () => {
   const savedUser = JSON.parse(localStorage.getItem("user"));
   const { loged } = useContext(AuthContext);
+  const { currentTexts } = useContext(I18nContext);
   return (
     <header>
       <nav className={styles.nav}>
@@ -18,13 +20,13 @@ const Header = () => {
 
         <div className={styles["nav-center"]}>
           <NavLink to="listpage" className={styles["nav-link"]}>
-            Tours
+            {currentTexts.nav.tours}
           </NavLink>
           <NavLink to="tripshistory" className={styles["nav-link"]}>
-            History
+            {currentTexts.nav.history}
           </NavLink>
           <NavLink to="settings" className={styles["nav-link"]}>
-            Settings
+            {currentTexts.nav.settings}
           </NavLink>
         </div>
 

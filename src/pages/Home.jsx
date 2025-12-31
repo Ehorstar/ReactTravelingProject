@@ -12,10 +12,13 @@ const Home = () => {
     <div className={styles.hero}>
       <div className={styles["hero-content"]}>
         <div className={styles["hero-card"]}>
-          <h1>{currentTexts.titleHome}</h1>
-          <p>{currentTexts.aboutHome}</p>
-          <button className={button.button} onClick={() => navigate("/listpage")}>
-            {currentTexts.booknowHome}
+          <h1>{currentTexts.home.title}</h1>
+          <p>{currentTexts.home.about}</p>
+          <button
+            className={button.button}
+            onClick={() => navigate("/listpage")}
+          >
+            {currentTexts.home.booknow}
           </button>
         </div>
       </div>
