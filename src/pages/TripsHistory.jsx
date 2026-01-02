@@ -1,11 +1,10 @@
 import React, { useContext } from "react";
 import TripsContext from "../contexts/TripsContext";
 import styles from "../CSS/TripsHistory.module.css";
-import button from "../CSS/Button.module.css";
 import I18nContext from "../contexts/I18nContext";
 
 const TripsHistory = () => {
-  const { trips, tripsCount, removeFromTrips } = useContext(TripsContext);
+  const { trips, tripsCount } = useContext(TripsContext);
   const { currentTexts } = useContext(I18nContext);
 
   return (
@@ -36,18 +35,10 @@ const TripsHistory = () => {
                         {currentTexts.history.amountOfPassengers}: {trip.amount}
                       </div>
                       <div>
-                        {currentTexts.history.dates}: {trip.dateStart} – {trip.dateEnd}
+                        {currentTexts.history.dates}: {trip.dateStart} –{" "}
+                        {trip.dateEnd}
                       </div>
                     </div>
-
-                    {/* 
-                    <div className={styles.passengers}>
-                      {trip.passengers.map((p, i) => (
-                        <span key={i} className={styles.passenger}>
-                          {p.name} ({p.age})
-                        </span>
-                      ))}
-                    </div> */}
                   </div>
 
                   <div className={styles.right}>
@@ -56,14 +47,6 @@ const TripsHistory = () => {
                       ${trip.price * trip.amount}
                     </span>
                   </div>
-
-                  {/* <button
-                    className={button.button}
-                    onClick={() => removeFromTrips(trip.id)}
-                  >
-                    {" "}
-                    Remove{" "}
-                  </button> */}
                 </div>
               ))}
             </div>

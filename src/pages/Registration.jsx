@@ -38,10 +38,8 @@ const Registration = () => {
   const navigate = useNavigate();
 
   const submitHandler = (values, { resetForm }) => {
-
     console.log(values);
     resetForm();
-
     localStorage.setItem(
       "user",
       JSON.stringify({

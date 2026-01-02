@@ -27,10 +27,10 @@ const validationSchema = Yup.object().shape({
 
 const Login = () => {
   const { currentTexts } = useContext(I18nContext);
-  const { loged, setLoged } = useContext(AuthContext);
+  const { setLoged } = useContext(AuthContext);
   const savedUser = JSON.parse(localStorage.getItem("user"));
   const navigate = useNavigate();
-  
+
   const submitHandler = (values, { resetForm }) => {
     if (
       values.name === savedUser.name &&
@@ -60,7 +60,10 @@ const Login = () => {
               <Form>
                 <div className={styles["registration-form"]}>
                   <div>
-                    <Field name="name" placeholder={currentTexts.auth.nameLogin} />
+                    <Field
+                      name="name"
+                      placeholder={currentTexts.auth.nameLogin}
+                    />
                     <ErrorMessage
                       name="name"
                       component="div"
